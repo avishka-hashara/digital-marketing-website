@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,23 +42,40 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
-        
-        body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #FF7F6D; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #e06050; }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #FF7F6D;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e06050;
+        }
 
         /* Background Grid Pattern */
         .bg-grid {
             background-size: 40px 40px;
             background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
         }
 
         /* Glassmorphism Classes */
@@ -67,7 +85,7 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
-        
+
         .glass-dark {
             background: rgba(26, 32, 44, 0.8);
             backdrop-filter: blur(12px);
@@ -76,88 +94,147 @@
         }
 
         /* Tab Transitions */
-        .tab-btn { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .tab-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         .tab-btn.active {
             background-color: white;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
             border-left: 4px solid #FF7F6D;
         }
-        .tab-btn.active .icon-box { background-color: #FF7F6D; color: white; transform: scale(1.1); }
-        
+
+        .tab-btn.active .icon-box {
+            background-color: #FF7F6D;
+            color: white;
+            transform: scale(1.1);
+        }
+
         /* Mobile Menu Transition */
-        #mobile-menu { transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out; max-height: 0; opacity: 0; overflow: hidden; }
-        #mobile-menu.open { max-height: 400px; opacity: 1; }
+        #mobile-menu {
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        #mobile-menu.open {
+            max-height: 400px;
+            opacity: 1;
+        }
 
         /* Reveal Animation Utility */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
+
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-bloom-coral selection:text-white">
 
     <nav class="fixed w-full z-50 glass shadow-sm transition-all duration-300">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <a href="#" class="flex items-center gap-3 group">
-                    <img src="logo33.png" alt="Bloom Labs" class="h-10 w-auto object-contain transition-transform group-hover:scale-105">
-                    <span class="text-xl font-bold text-gray-800 tracking-tight group-hover:text-bloom-coral transition-colors">Bloom Labs</span>
+                    <img src="logo33.png" alt="Bloom Labs"
+                        class="h-10 w-auto object-contain transition-transform group-hover:scale-105">
+                    <span
+                        class="text-xl font-bold text-gray-800 tracking-tight group-hover:text-bloom-coral transition-colors">Bloom
+                        Labs</span>
                 </a>
 
                 <div class="hidden md:flex space-x-8 text-sm font-semibold text-gray-600 items-center">
-                    <a href="#services" class="hover:text-bloom-coral transition relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-bloom-coral after:transition-all hover:after:w-full">Services</a>
-                    <a href="#process" class="hover:text-bloom-coral transition relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-bloom-coral after:transition-all hover:after:w-full">Our Process</a>
-                    <a href="#pricing" class="hover:text-bloom-coral transition relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-bloom-coral after:transition-all hover:after:w-full">Investment</a>
-                    
-                    <a href="#contact" class="bg-gradient-to-r from-bloom-coral to-orange-500 text-white px-6 py-2.5 rounded-full font-bold hover:shadow-lg hover:shadow-orange-200 transition transform hover:-translate-y-0.5">
+                    <a href="#services"
+                        class="hover:text-bloom-coral transition relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-bloom-coral after:transition-all hover:after:w-full">Services</a>
+                    <a href="#portfolio"
+                        class="hover:text-bloom-coral transition relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-bloom-coral after:transition-all hover:after:w-full">Portfolio</a>
+                    <a href="#process"
+                        class="hover:text-bloom-coral transition relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-bloom-coral after:transition-all hover:after:w-full">Our
+                        Process</a>
+                    <a href="#pricing"
+                        class="hover:text-bloom-coral transition relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-bloom-coral after:transition-all hover:after:w-full">Investment</a>
+
+                    <a href="#contact"
+                        class="bg-gradient-to-r from-bloom-coral to-orange-500 text-white px-6 py-2.5 rounded-full font-bold hover:shadow-lg hover:shadow-orange-200 transition transform hover:-translate-y-0.5">
                         Book Discovery Call
                     </a>
                 </div>
 
                 <button id="menu-btn" class="md:hidden text-gray-800 focus:outline-none p-2">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
                 </button>
             </div>
 
             <div id="mobile-menu" class="md:hidden mt-4 flex flex-col space-y-4 pb-4 border-t border-gray-100 pt-4">
-                <a href="#services" class="text-gray-600 font-medium hover:text-bloom-coral pl-2 block" onclick="toggleMenu()">Services</a>
-                <a href="#process" class="text-gray-600 font-medium hover:text-bloom-coral pl-2 block" onclick="toggleMenu()">Our Process</a>
-                <a href="#pricing" class="text-gray-600 font-medium hover:text-bloom-coral pl-2 block" onclick="toggleMenu()">Investment</a>
-                <a href="#contact" class="bg-bloom-coral text-white text-center py-3 rounded-xl font-bold" onclick="toggleMenu()">Book Call Now</a>
+                <a href="#services" class="text-gray-600 font-medium hover:text-bloom-coral pl-2 block"
+                    onclick="toggleMenu()">Services</a>
+                <a href="#portfolio" class="text-gray-600 font-medium hover:text-bloom-coral pl-2 block"
+                    onclick="toggleMenu()">Portfolio</a>
+                <a href="#process" class="text-gray-600 font-medium hover:text-bloom-coral pl-2 block"
+                    onclick="toggleMenu()">Our Process</a>
+                <a href="#pricing" class="text-gray-600 font-medium hover:text-bloom-coral pl-2 block"
+                    onclick="toggleMenu()">Investment</a>
+                <a href="#contact" class="bg-bloom-coral text-white text-center py-3 rounded-xl font-bold"
+                    onclick="toggleMenu()">Book Call Now</a>
             </div>
         </div>
     </nav>
 
     <header class="relative pt-32 pb-32 md:pb-48 overflow-hidden bg-grid">
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-            <div class="absolute top-0 -left-4 w-72 h-72 bg-bloom-coral rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-            <div class="absolute top-0 -right-4 w-72 h-72 bg-bloom-teal rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-            <div class="absolute -bottom-8 left-20 w-72 h-72 bg-bloom-gold rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+            <div
+                class="absolute top-0 -left-4 w-72 h-72 bg-bloom-coral rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob">
+            </div>
+            <div
+                class="absolute top-0 -right-4 w-72 h-72 bg-bloom-teal rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000">
+            </div>
+            <div
+                class="absolute -bottom-8 left-20 w-72 h-72 bg-bloom-gold rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000">
+            </div>
         </div>
 
         <div class="container mx-auto px-6 text-center z-10 relative">
             <div class="reveal active">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-orange-100 shadow-sm mb-8 animate-fade-in-up">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-orange-100 shadow-sm mb-8 animate-fade-in-up">
                     <span class="w-2 h-2 rounded-full bg-bloom-coral animate-pulse"></span>
-                    <span class="text-xs font-bold text-bloom-coral tracking-widest uppercase">Accepting New Clients for 2025</span>
+                    <span class="text-xs font-bold text-bloom-coral tracking-widest uppercase">Accepting New Clients for
+                        2025</span>
                 </div>
-                
+
                 <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-slate-900 tracking-tight">
                     A 360-Degree Approach to <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-bloom-coral via-orange-500 to-bloom-gold">Social Media Growth</span>
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-bloom-coral via-orange-500 to-bloom-gold">Social
+                        Media Growth</span>
                 </h1>
-                
+
                 <p class="mt-6 text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
-                    We don't just post. We plan, produce, and profit. From content calendars to Meta Ads, we take full ownership of your digital presence.
+                    We don't just post. We plan, produce, and profit. From content calendars to Meta Ads, we take full
+                    ownership of your digital presence.
                 </p>
-                
+
                 <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#pricing" class="bg-slate-900 text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition transform shadow-xl shadow-slate-200">
+                    <a href="#pricing"
+                        class="bg-slate-900 text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition transform shadow-xl shadow-slate-200">
                         View Packages
                     </a>
-                    <a href="#process" class="bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-full font-bold hover:bg-gray-50 transition shadow-sm hover:shadow-md">
+                    <a href="#process"
+                        class="bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-full font-bold hover:bg-gray-50 transition shadow-sm hover:shadow-md">
                         How We Work
                     </a>
-                    <a href="proposal.pdf" download class="bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-full font-bold hover:bg-gray-50 transition shadow-sm hover:shadow-md">
+                    <a href="proposal.pdf" download
+                        class="bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-full font-bold hover:bg-gray-50 transition shadow-sm hover:shadow-md">
                         <i class="fas fa-download mr-2"></i>Download Proposal
                     </a>
                 </div>
@@ -174,22 +251,31 @@
 
             <div class="flex flex-col lg:flex-row gap-8">
                 <div class="lg:w-1/3 flex flex-col space-y-3">
-                    <button onclick="openTab(event, 'social')" class="tab-btn active w-full text-left p-4 rounded-xl flex items-center gap-4 group hover:bg-gray-50">
-                        <div class="icon-box w-12 h-12 rounded-lg flex items-center justify-center text-2xl bg-gray-100 text-gray-500">📱</div>
+                    <button onclick="openTab(event, 'social')"
+                        class="tab-btn active w-full text-left p-4 rounded-xl flex items-center gap-4 group hover:bg-gray-50">
+                        <div
+                            class="icon-box w-12 h-12 rounded-lg flex items-center justify-center text-2xl bg-gray-100 text-gray-500">
+                            📱</div>
                         <div>
                             <span class="font-bold text-lg block text-slate-800">Social Management</span>
                             <span class="text-xs md:text-sm text-slate-400">Full Profile Ownership</span>
                         </div>
                     </button>
-                    <button onclick="openTab(event, 'content')" class="tab-btn w-full text-left p-4 rounded-xl flex items-center gap-4 group hover:bg-gray-50">
-                        <div class="icon-box w-12 h-12 rounded-lg flex items-center justify-center text-2xl bg-gray-100 text-gray-500">🎨</div>
+                    <button onclick="openTab(event, 'content')"
+                        class="tab-btn w-full text-left p-4 rounded-xl flex items-center gap-4 group hover:bg-gray-50">
+                        <div
+                            class="icon-box w-12 h-12 rounded-lg flex items-center justify-center text-2xl bg-gray-100 text-gray-500">
+                            🎨</div>
                         <div>
                             <span class="font-bold text-lg block text-slate-800">Content Production</span>
                             <span class="text-xs md:text-sm text-slate-400">Design & Short-Form Video</span>
                         </div>
                     </button>
-                    <button onclick="openTab(event, 'ads')" class="tab-btn w-full text-left p-4 rounded-xl flex items-center gap-4 group hover:bg-gray-50">
-                        <div class="icon-box w-12 h-12 rounded-lg flex items-center justify-center text-2xl bg-gray-100 text-gray-500">🎯</div>
+                    <button onclick="openTab(event, 'ads')"
+                        class="tab-btn w-full text-left p-4 rounded-xl flex items-center gap-4 group hover:bg-gray-50">
+                        <div
+                            class="icon-box w-12 h-12 rounded-lg flex items-center justify-center text-2xl bg-gray-100 text-gray-500">
+                            🎯</div>
                         <div>
                             <span class="font-bold text-lg block text-slate-800">Paid Advertising</span>
                             <span class="text-xs md:text-sm text-slate-400">Meta Ads & Targeting</span>
@@ -197,45 +283,61 @@
                     </button>
                 </div>
 
-                <div class="lg:w-2/3 bg-bloom-light/50 rounded-3xl p-6 md:p-12 shadow-xl border border-white/50 min-h-[450px] relative overflow-hidden">
-                    
+                <div
+                    class="lg:w-2/3 bg-bloom-light/50 rounded-3xl p-6 md:p-12 shadow-xl border border-white/50 min-h-[450px] relative overflow-hidden">
+
                     <div class="absolute -top-20 -right-20 w-64 h-64 bg-bloom-teal/10 rounded-full blur-3xl"></div>
 
                     <div id="social" class="tab-content block animate-fade-in relative z-10">
                         <h3 class="text-2xl md:text-3xl font-bold mb-6 text-slate-900">We Handle The Daily Grind.</h3>
-                        <p class="text-lg text-slate-600 mb-8">Stop worrying about what to post tomorrow. We take over your Instagram, Facebook, and TikTok.</p>
+                        <p class="text-lg text-slate-600 mb-8">Stop worrying about what to post tomorrow. We take over
+                            your Instagram, Facebook, and TikTok.</p>
                         <div class="grid md:grid-cols-2 gap-4 md:gap-6">
-                            <div class="p-5 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                            <div
+                                class="p-5 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
                                 <h4 class="font-bold text-bloom-coral mb-2">🗓️ Content Calendar</h4>
-                                <p class="text-sm text-gray-600">Planning posts 30 days in advance so you always know what's coming.</p>
+                                <p class="text-sm text-gray-600">Planning posts 30 days in advance so you always know
+                                    what's coming.</p>
                             </div>
-                            <div class="p-5 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                            <div
+                                class="p-5 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
                                 <h4 class="font-bold text-bloom-teal mb-2">✍️ Copywriting</h4>
-                                <p class="text-sm text-gray-600">Engaging captions in English (or Sinhala) that actually drive action.</p>
+                                <p class="text-sm text-gray-600">Engaging captions in English (or Sinhala) that actually
+                                    drive action.</p>
                             </div>
-                            <div class="p-5 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition col-span-1 md:col-span-2">
+                            <div
+                                class="p-5 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition col-span-1 md:col-span-2">
                                 <h4 class="font-bold text-bloom-gold mb-2">⏰ Strategic Scheduling</h4>
-                                <p class="text-sm text-gray-600">Posting at peak times using data to maximize your organic reach.</p>
+                                <p class="text-sm text-gray-600">Posting at peak times using data to maximize your
+                                    organic reach.</p>
                             </div>
                         </div>
                     </div>
 
                     <div id="content" class="tab-content hidden animate-fade-in relative z-10">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-6 text-slate-900">Original Content. No Generics.</h3>
-                        <p class="text-lg text-slate-600 mb-8">Generic stock photos don't sell. We create original, branded assets that stop the scroll.</p>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6 text-slate-900">Original Content. No Generics.
+                        </h3>
+                        <p class="text-lg text-slate-600 mb-8">Generic stock photos don't sell. We create original,
+                            branded assets that stop the scroll.</p>
                         <ul class="space-y-4">
                             <li class="bg-white p-4 rounded-xl border border-gray-100 flex items-start gap-4">
-                                <div class="w-10 h-10 rounded-full bg-bloom-coral/10 text-bloom-coral flex items-center justify-center font-bold">1</div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-bloom-coral/10 text-bloom-coral flex items-center justify-center font-bold">
+                                    1</div>
                                 <div>
                                     <strong class="block text-gray-900 text-lg">Graphic Design</strong>
-                                    <span class="text-gray-500 text-sm">Branded posts for offers, announcements, and educational carousels.</span>
+                                    <span class="text-gray-500 text-sm">Branded posts for offers, announcements, and
+                                        educational carousels.</span>
                                 </div>
                             </li>
                             <li class="bg-white p-4 rounded-xl border border-gray-100 flex items-start gap-4">
-                                <div class="w-10 h-10 rounded-full bg-bloom-teal/10 text-bloom-teal flex items-center justify-center font-bold">2</div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-bloom-teal/10 text-bloom-teal flex items-center justify-center font-bold">
+                                    2</div>
                                 <div>
                                     <strong class="block text-gray-900 text-lg">Short-Form Video</strong>
-                                    <span class="text-gray-500 text-sm">Editing dynamic Reels/TikToks. Currently the highest reach format.</span>
+                                    <span class="text-gray-500 text-sm">Editing dynamic Reels/TikToks. Currently the
+                                        highest reach format.</span>
                                 </div>
                             </li>
                         </ul>
@@ -243,20 +345,334 @@
 
                     <div id="ads" class="tab-content hidden animate-fade-in relative z-10">
                         <h3 class="text-2xl md:text-3xl font-bold mb-6 text-slate-900">Reach Beyond Your Followers.</h3>
-                        <p class="text-lg text-slate-600 mb-8">Organic reach is great, but paid ads are scalable. We ensure every Rupee spent brings a return.</p>
+                        <p class="text-lg text-slate-600 mb-8">Organic reach is great, but paid ads are scalable. We
+                            ensure every Rupee spent brings a return.</p>
                         <div class="space-y-6">
                             <div class="bg-white p-6 rounded-xl border-l-4 border-bloom-coral shadow-sm">
                                 <h4 class="font-bold text-lg text-slate-800">🎯 Hyper-Targeting</h4>
-                                <p class="text-gray-600 mt-2">"People in Kandy aged 18-30 interested in Fashion". We find your exact customer.</p>
+                                <p class="text-gray-600 mt-2">"People in Kandy aged 18-30 interested in Fashion". We
+                                    find your exact customer.</p>
                             </div>
                             <div class="bg-white p-6 rounded-xl border-l-4 border-bloom-gold shadow-sm">
                                 <h4 class="font-bold text-lg text-slate-800">💰 Budget Optimization</h4>
-                                <p class="text-gray-600 mt-2">We monitor campaigns daily to kill losing ads and scale winning ones.</p>
+                                <p class="text-gray-600 mt-2">We monitor campaigns daily to kill losing ads and scale
+                                    winning ones.</p>
                             </div>
                         </div>
                     </div>
 
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-20 right-10 w-72 h-72 bg-bloom-coral/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 left-10 w-80 h-80 bg-bloom-teal/5 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-6 reveal">
+            <div class="text-center mb-16">
+                <p class="text-bloom-coral font-bold uppercase text-sm mb-2 tracking-wider">OUR WORK</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4">Portfolio Showcase</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Real results from real brands. See how we've helped
+                    businesses grow their social media presence and drive revenue.</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button onclick="filterPortfolio('all')"
+                    class="portfolio-filter active px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 bg-slate-900 text-white shadow-lg"
+                    data-filter="all">
+                    All Projects
+                </button>
+                <button onclick="filterPortfolio('social')"
+                    class="portfolio-filter px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:border-bloom-coral hover:text-bloom-coral"
+                    data-filter="social">
+                    Social Media
+                </button>
+                <button onclick="filterPortfolio('branding')"
+                    class="portfolio-filter px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:border-bloom-coral hover:text-bloom-coral"
+                    data-filter="branding">
+                    Branding
+                </button>
+                <button onclick="filterPortfolio('ads')"
+                    class="portfolio-filter px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:border-bloom-coral hover:text-bloom-coral"
+                    data-filter="ads">
+                    Paid Ads
+                </button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" id="portfolioGrid">
+
+                <!-- Project 1 -->
+                <div class="portfolio-item group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                    data-category="social branding">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-pink-400 via-rose-500 to-orange-400 relative">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300">
+                        </div>
+                        <!-- Mock Content Preview -->
+                        <div
+                            class="absolute inset-4 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                            <div class="text-white text-center">
+                                <i class="fab fa-instagram text-5xl mb-3"></i>
+                                <p class="font-bold text-lg">Fashion Brand</p>
+                            </div>
+                        </div>
+                        <!-- Hover Stats Overlay -->
+                        <div
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <div class="text-white text-center">
+                                <div class="flex gap-6">
+                                    <div>
+                                        <p class="text-3xl font-bold">+340%</p>
+                                        <p class="text-sm opacity-80">Engagement</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-3xl font-bold">15K</p>
+                                        <p class="text-sm opacity-80">Followers</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span
+                                class="px-3 py-1 bg-pink-100 text-pink-600 text-xs font-semibold rounded-full">Fashion</span>
+                            <span
+                                class="px-3 py-1 bg-orange-100 text-orange-600 text-xs font-semibold rounded-full">Instagram</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">Boutique Style Co.</h3>
+                        <p class="text-gray-500 text-sm">Complete social media makeover with content strategy and
+                            influencer partnerships.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="portfolio-item group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                    data-category="ads social">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-500 relative">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300">
+                        </div>
+                        <div
+                            class="absolute inset-4 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                            <div class="text-white text-center">
+                                <i class="fab fa-facebook text-5xl mb-3"></i>
+                                <p class="font-bold text-lg">Restaurant Chain</p>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <div class="text-white text-center">
+                                <div class="flex gap-6">
+                                    <div>
+                                        <p class="text-3xl font-bold">5.2x</p>
+                                        <p class="text-sm opacity-80">ROAS</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-3xl font-bold">2.5K</p>
+                                        <p class="text-sm opacity-80">Orders</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span
+                                class="px-3 py-1 bg-emerald-100 text-emerald-600 text-xs font-semibold rounded-full">F&B</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 text-xs font-semibold rounded-full">Meta
+                                Ads</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">Spice Kitchen</h3>
+                        <p class="text-gray-500 text-sm">Lead generation campaign driving online orders through targeted
+                            Facebook ads.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="portfolio-item group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                    data-category="branding">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500 relative">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300">
+                        </div>
+                        <div
+                            class="absolute inset-4 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                            <div class="text-white text-center">
+                                <i class="fas fa-palette text-5xl mb-3"></i>
+                                <p class="font-bold text-lg">Tech Startup</p>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <div class="text-white text-center">
+                                <div class="flex gap-6">
+                                    <div>
+                                        <p class="text-3xl font-bold">100%</p>
+                                        <p class="text-sm opacity-80">Rebrand</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-3xl font-bold">50+</p>
+                                        <p class="text-sm opacity-80">Assets</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span
+                                class="px-3 py-1 bg-violet-100 text-violet-600 text-xs font-semibold rounded-full">Technology</span>
+                            <span
+                                class="px-3 py-1 bg-fuchsia-100 text-fuchsia-600 text-xs font-semibold rounded-full">Branding</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">InnovateTech</h3>
+                        <p class="text-gray-500 text-sm">Full brand identity redesign including social templates and
+                            brand guidelines.</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="portfolio-item group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                    data-category="social">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-amber-400 via-yellow-500 to-orange-500 relative">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300">
+                        </div>
+                        <div
+                            class="absolute inset-4 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                            <div class="text-white text-center">
+                                <i class="fab fa-tiktok text-5xl mb-3"></i>
+                                <p class="font-bold text-lg">Beauty Brand</p>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <div class="text-white text-center">
+                                <div class="flex gap-6">
+                                    <div>
+                                        <p class="text-3xl font-bold">2.1M</p>
+                                        <p class="text-sm opacity-80">Views</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-3xl font-bold">45K</p>
+                                        <p class="text-sm opacity-80">Followers</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span
+                                class="px-3 py-1 bg-amber-100 text-amber-600 text-xs font-semibold rounded-full">Beauty</span>
+                            <span
+                                class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full">TikTok</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">Glow Cosmetics</h3>
+                        <p class="text-gray-500 text-sm">Viral TikTok strategy with short-form video content that drove
+                            massive brand awareness.</p>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="portfolio-item group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                    data-category="ads">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 relative">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300">
+                        </div>
+                        <div
+                            class="absolute inset-4 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                            <div class="text-white text-center">
+                                <i class="fas fa-chart-line text-5xl mb-3"></i>
+                                <p class="font-bold text-lg">E-commerce</p>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <div class="text-white text-center">
+                                <div class="flex gap-6">
+                                    <div>
+                                        <p class="text-3xl font-bold">LKR 8M</p>
+                                        <p class="text-sm opacity-80">Revenue</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-3xl font-bold">4.8x</p>
+                                        <p class="text-sm opacity-80">ROAS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span
+                                class="px-3 py-1 bg-blue-100 text-blue-600 text-xs font-semibold rounded-full">E-commerce</span>
+                            <span
+                                class="px-3 py-1 bg-indigo-100 text-indigo-600 text-xs font-semibold rounded-full">Conversion</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">Urban Threads</h3>
+                        <p class="text-gray-500 text-sm">Full-funnel ad campaign from awareness to purchase with
+                            retargeting strategy.</p>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="portfolio-item group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                    data-category="social branding">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-rose-400 via-red-500 to-orange-500 relative">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300">
+                        </div>
+                        <div
+                            class="absolute inset-4 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                            <div class="text-white text-center">
+                                <i class="fab fa-linkedin text-5xl mb-3"></i>
+                                <p class="font-bold text-lg">B2B Service</p>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <div class="text-white text-center">
+                                <div class="flex gap-6">
+                                    <div>
+                                        <p class="text-3xl font-bold">120+</p>
+                                        <p class="text-sm opacity-80">Leads</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-3xl font-bold">8K</p>
+                                        <p class="text-sm opacity-80">Connections</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span
+                                class="px-3 py-1 bg-rose-100 text-rose-600 text-xs font-semibold rounded-full">B2B</span>
+                            <span
+                                class="px-3 py-1 bg-sky-100 text-sky-600 text-xs font-semibold rounded-full">LinkedIn</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-2">ConsultPro Agency</h3>
+                        <p class="text-gray-500 text-sm">LinkedIn thought leadership campaign positioning founders as
+                            industry experts.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center mt-16">
+                <a href="#contact"
+                    class="inline-flex items-center gap-2 bg-gradient-to-r from-bloom-coral to-orange-500 text-white px-8 py-4 rounded-full font-bold hover:shadow-lg hover:shadow-orange-200 transition transform hover:-translate-y-0.5">
+                    <span>Start Your Success Story</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
@@ -268,32 +684,48 @@
                 <p class="text-gray-500 mt-2">How we move from stranger to partner.</p>
             </div>
 
-            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-4 relative max-w-6xl mx-auto">
+            <div
+                class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-4 relative max-w-6xl mx-auto">
                 <div class="hidden md:block absolute top-8 left-10 w-[90%] h-1 bg-gray-200 -z-10"></div>
                 <div class="md:hidden absolute top-10 bottom-10 left-1/2 w-1 bg-gray-200 -z-10 -translate-x-1/2"></div>
 
-                <div class="w-full md:w-1/5 flex flex-col items-center text-center bg-white md:bg-transparent p-6 md:p-0 rounded-xl shadow-md md:shadow-none z-10">
-                    <div class="w-16 h-16 bg-slate-800 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 ring-4 ring-white">1</div>
+                <div
+                    class="w-full md:w-1/5 flex flex-col items-center text-center bg-white md:bg-transparent p-6 md:p-0 rounded-xl shadow-md md:shadow-none z-10">
+                    <div
+                        class="w-16 h-16 bg-slate-800 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 ring-4 ring-white">
+                        1</div>
                     <h4 class="font-bold text-gray-800 text-lg">Discovery</h4>
                     <p class="text-sm text-gray-500 mt-2">Discuss goals & sales targets</p>
                 </div>
-                <div class="w-full md:w-1/5 flex flex-col items-center text-center bg-white md:bg-transparent p-6 md:p-0 rounded-xl shadow-md md:shadow-none z-10">
-                    <div class="w-16 h-16 bg-bloom-coral text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 ring-4 ring-white">2</div>
+                <div
+                    class="w-full md:w-1/5 flex flex-col items-center text-center bg-white md:bg-transparent p-6 md:p-0 rounded-xl shadow-md md:shadow-none z-10">
+                    <div
+                        class="w-16 h-16 bg-bloom-coral text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 ring-4 ring-white">
+                        2</div>
                     <h4 class="font-bold text-gray-800 text-lg">Strategy</h4>
                     <p class="text-sm text-gray-500 mt-2">Audit & "Brand Voice"</p>
                 </div>
-                <div class="w-full md:w-1/5 flex flex-col items-center text-center bg-white md:bg-transparent p-6 md:p-0 rounded-xl shadow-md md:shadow-none z-10">
-                    <div class="w-16 h-16 bg-bloom-gold text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 ring-4 ring-white">3</div>
+                <div
+                    class="w-full md:w-1/5 flex flex-col items-center text-center bg-white md:bg-transparent p-6 md:p-0 rounded-xl shadow-md md:shadow-none z-10">
+                    <div
+                        class="w-16 h-16 bg-bloom-gold text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 ring-4 ring-white">
+                        3</div>
                     <h4 class="font-bold text-gray-800 text-lg">Creation</h4>
                     <p class="text-sm text-gray-500 mt-2">Design, Write, Approve</p>
                 </div>
-                <div class="w-full md:w-1/5 flex flex-col items-center text-center bg-white md:bg-transparent p-6 md:p-0 rounded-xl shadow-md md:shadow-none z-10">
-                    <div class="w-16 h-16 bg-bloom-teal text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 ring-4 ring-white">4</div>
+                <div
+                    class="w-full md:w-1/5 flex flex-col items-center text-center bg-white md:bg-transparent p-6 md:p-0 rounded-xl shadow-md md:shadow-none z-10">
+                    <div
+                        class="w-16 h-16 bg-bloom-teal text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 ring-4 ring-white">
+                        4</div>
                     <h4 class="font-bold text-gray-800 text-lg">Execution</h4>
                     <p class="text-sm text-gray-500 mt-2">Publishing & Ads Live</p>
                 </div>
-                 <div class="w-full md:w-1/5 flex flex-col items-center text-center bg-white md:bg-transparent p-6 md:p-0 rounded-xl shadow-md md:shadow-none z-10">
-                    <div class="w-16 h-16 bg-gray-200 text-gray-600 rounded-full flex items-center justify-center text-2xl font-bold mb-4 ring-4 ring-white">5</div>
+                <div
+                    class="w-full md:w-1/5 flex flex-col items-center text-center bg-white md:bg-transparent p-6 md:p-0 rounded-xl shadow-md md:shadow-none z-10">
+                    <div
+                        class="w-16 h-16 bg-gray-200 text-gray-600 rounded-full flex items-center justify-center text-2xl font-bold mb-4 ring-4 ring-white">
+                        5</div>
                     <h4 class="font-bold text-gray-800 text-lg">Reporting</h4>
                     <p class="text-sm text-gray-500 mt-2">Monthly Performance</p>
                 </div>
@@ -302,7 +734,9 @@
     </section>
 
     <section id="pricing" class="py-24 bg-white relative overflow-hidden">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-grid opacity-50 pointer-events-none"></div>
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-grid opacity-50 pointer-events-none">
+        </div>
 
         <div class="container mx-auto px-6 reveal relative z-10">
             <div class="text-center mb-16">
@@ -312,79 +746,119 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
-                
-                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:border-bloom-teal transition duration-300 hover:-translate-y-2 relative group">
-                    <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <svg class="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 24 24"><path d="M17,8C8,10,5.9,16.17,3.82,21.34L5.71,22l1-2.3A4.49,4.49,0,0,0,8,20C19,20,22,3,22,3,21,5,14,5.25,9,6.25S2,11.5,2,13.5a6.22,6.22,0,0,0,1.75,3.75C7,13,7,9,17,8Z"/></svg>
+
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:border-bloom-teal transition duration-300 hover:-translate-y-2 relative group">
+                    <div
+                        class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <svg class="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17,8C8,10,5.9,16.17,3.82,21.34L5.71,22l1-2.3A4.49,4.49,0,0,0,8,20C19,20,22,3,22,3,21,5,14,5.25,9,6.25S2,11.5,2,13.5a6.22,6.22,0,0,0,1.75,3.75C7,13,7,9,17,8Z" />
+                        </svg>
                     </div>
                     <h3 class="text-lg font-bold text-gray-400 uppercase tracking-widest mb-2">Tier 1</h3>
                     <h2 class="text-2xl font-bold text-slate-900 mb-4">The Essentials</h2>
-                    <p class="text-sm text-gray-500 mb-6 border-b border-gray-100 pb-6">Best for maintaining an active presence.</p>
-                    <div class="text-3xl font-extrabold text-slate-900 mb-6">LKR 5,000<span class="text-base font-medium text-gray-400">/mo</span></div>
+                    <p class="text-sm text-gray-500 mb-6 border-b border-gray-100 pb-6">Best for maintaining an active
+                        presence.</p>
+                    <div class="text-3xl font-extrabold text-slate-900 mb-6">LKR 5,000<span
+                            class="text-base font-medium text-gray-400">/mo</span></div>
                     <ul class="space-y-3 mb-8 text-sm text-gray-600">
-                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> FB, Instagram & Linkdin</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> FB, Instagram & Linkdin
+                        </li>
                         <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 8 Static Posts</li>
                         <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 8 Stories</li>
                         <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Monthly Report</li>
                     </ul>
-                    <a href="#contact" class="block w-full text-center py-3 rounded-xl border-2 border-gray-100 font-bold hover:border-green-500 hover:text-green-500 transition">Select Tier 1</a>
+                    <a href="#contact"
+                        class="block w-full text-center py-3 rounded-xl border-2 border-gray-100 font-bold hover:border-green-500 hover:text-green-500 transition">Select
+                        Tier 1</a>
                 </div>
 
-                <div class="bg-white rounded-2xl p-8 shadow-2xl border-2 border-bloom-coral relative transform md:-translate-y-6 z-10">
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-2xl border-2 border-bloom-coral relative transform md:-translate-y-6 z-10">
                     <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-bloom-coral to-bloom-gold"></div>
-                    <div class="absolute top-4 right-4 bg-bloom-coral text-white text-xs font-bold px-3 py-1 rounded-full">MOST POPULAR</div>
+                    <div
+                        class="absolute top-4 right-4 bg-bloom-coral text-white text-xs font-bold px-3 py-1 rounded-full">
+                        MOST POPULAR</div>
                     <div class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-bloom-coral" fill="currentColor" viewBox="0 0 24 24"><path d="M13.13,22.19L11.5,18.36C13.07,17.78 14.54,17 15.9,16.09L13.13,22.19M5.64,12.5L1.81,15.27L14.05,20.83L13.22,18.96C12.18,18.44 11.23,17.85 10.37,17.21L5.64,12.5M21.61,2.39C21.61,2.39 21.61,2.39 21.61,2.39C21.61,2.4 21.61,2.4 21.61,2.4C21.06,4.72 20.08,8.23 18.04,11.25C17.3,12.33 16.47,13.25 15.6,14.03C15.11,13.72 14.65,13.36 14.22,12.96L14.22,12.95C12.28,11 11.56,8.74 12.5,6.68C12.78,6.06 13.23,5.55 13.82,5.18L13.9,5.13C13.9,5.13 18.57,2.22 21.61,2.39M9.35,16.19C8.42,15.35 7.64,14.42 7.03,13.41L11.75,18.14C10.9,17.55 10.1,16.9 9.35,16.19Z" /></svg>
+                        <svg class="w-8 h-8 text-bloom-coral" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M13.13,22.19L11.5,18.36C13.07,17.78 14.54,17 15.9,16.09L13.13,22.19M5.64,12.5L1.81,15.27L14.05,20.83L13.22,18.96C12.18,18.44 11.23,17.85 10.37,17.21L5.64,12.5M21.61,2.39C21.61,2.39 21.61,2.39 21.61,2.39C21.61,2.4 21.61,2.4 21.61,2.4C21.06,4.72 20.08,8.23 18.04,11.25C17.3,12.33 16.47,13.25 15.6,14.03C15.11,13.72 14.65,13.36 14.22,12.96L14.22,12.95C12.28,11 11.56,8.74 12.5,6.68C12.78,6.06 13.23,5.55 13.82,5.18L13.9,5.13C13.9,5.13 18.57,2.22 21.61,2.39M9.35,16.19C8.42,15.35 7.64,14.42 7.03,13.41L11.75,18.14C10.9,17.55 10.1,16.9 9.35,16.19Z" />
+                        </svg>
                     </div>
                     <h3 class="text-lg font-bold text-bloom-coral uppercase tracking-widest mb-2">Tier 2</h3>
                     <h2 class="text-2xl font-bold text-slate-900 mb-4">Growth Accelerator</h2>
-                    <p class="text-sm text-gray-500 mb-6 border-b border-gray-100 pb-6">For businesses looking to increase sales.</p>
-                    <div class="text-4xl font-extrabold text-slate-900 mb-6">LKR 9,000<span class="text-base font-medium text-gray-400">/mo</span></div>
+                    <p class="text-sm text-gray-500 mb-6 border-b border-gray-100 pb-6">For businesses looking to
+                        increase sales.</p>
+                    <div class="text-4xl font-extrabold text-slate-900 mb-6">LKR 9,000<span
+                            class="text-base font-medium text-gray-400">/mo</span></div>
                     <ul class="space-y-3 mb-8 text-sm text-gray-600 font-medium">
-                        <li class="flex items-center"><span class="text-bloom-coral mr-2">✓</span> FB, Instagram, Linkdin & <span class="font-bold ml-1">TikTok</span></li>
-                        <li class="flex items-center"><span class="text-bloom-coral mr-2">✓</span> 12 Posts + <span class="font-bold ml-1">4 Reels</span></li>
-                        <li class="flex items-center"><span class="text-bloom-coral mr-2">✓</span> 1 Ad Campaign Mgmt</li>
+                        <li class="flex items-center"><span class="text-bloom-coral mr-2">✓</span> FB, Instagram,
+                            Linkdin & <span class="font-bold ml-1">TikTok</span></li>
+                        <li class="flex items-center"><span class="text-bloom-coral mr-2">✓</span> 12 Posts + <span
+                                class="font-bold ml-1">4 Reels</span></li>
+                        <li class="flex items-center"><span class="text-bloom-coral mr-2">✓</span> 1 Ad Campaign Mgmt
+                        </li>
                         <li class="flex items-center"><span class="text-bloom-coral mr-2">✓</span> Community Mgmt</li>
                         <li class="flex items-center"><span class="text-bloom-coral mr-2">✓</span> Monthly Report</li>
                     </ul>
-                    <a href="#contact" class="block w-full text-center py-4 rounded-xl bg-gradient-to-r from-bloom-coral to-bloom-gold text-white font-bold shadow-lg hover:shadow-xl hover:scale-[1.02] transition">Select Tier 2</a>
+                    <a href="#contact"
+                        class="block w-full text-center py-4 rounded-xl bg-gradient-to-r from-bloom-coral to-bloom-gold text-white font-bold shadow-lg hover:shadow-xl hover:scale-[1.02] transition">Select
+                        Tier 2</a>
                 </div>
 
-                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:border-bloom-gold transition duration-300 hover:-translate-y-2 relative group">
-                    <div class="w-16 h-16 bg-yellow-50 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <svg class="w-8 h-8 text-bloom-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M5,16L3,5L8.5,10L12,4L15.5,10L21,5L19,16H5M19,19C19,19.55 18.55,20 18,20H6C5.45,20 5,19.55 5,19V18H19V19Z" /></svg>
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:border-bloom-gold transition duration-300 hover:-translate-y-2 relative group">
+                    <div
+                        class="w-16 h-16 bg-yellow-50 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <svg class="w-8 h-8 text-bloom-gold" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M5,16L3,5L8.5,10L12,4L15.5,10L21,5L19,16H5M19,19C19,19.55 18.55,20 18,20H6C5.45,20 5,19.55 5,19V18H19V19Z" />
+                        </svg>
                     </div>
                     <h3 class="text-lg font-bold text-bloom-gold uppercase tracking-widest mb-2">Tier 3</h3>
                     <h2 class="text-2xl font-bold text-slate-900 mb-4">Brand Dominator</h2>
-                    <p class="text-sm text-gray-500 mb-6 border-b border-gray-100 pb-6">Aggressive expansion & leadership.</p>
-                    <div class="text-3xl font-extrabold text-slate-900 mb-6">LKR 20,000+<span class="text-base font-medium text-gray-400">/mo</span></div>
+                    <p class="text-sm text-gray-500 mb-6 border-b border-gray-100 pb-6">Aggressive expansion &
+                        leadership.</p>
+                    <div class="text-3xl font-extrabold text-slate-900 mb-6">LKR 20,000+<span
+                            class="text-base font-medium text-gray-400">/mo</span></div>
                     <ul class="space-y-3 mb-8 text-sm text-gray-600">
                         <li class="flex items-center"><span class="text-bloom-gold mr-2">👑</span> All Platforms</li>
-                        <li class="flex items-center"><span class="text-bloom-gold mr-2">👑</span> Daily Posting (20+8)</li>
-                        <li class="flex items-center"><span class="text-bloom-gold mr-2">👑</span> Full Ad Management</li>
+                        <li class="flex items-center"><span class="text-bloom-gold mr-2">👑</span> Daily Posting (20+8)
+                        </li>
+                        <li class="flex items-center"><span class="text-bloom-gold mr-2">👑</span> Full Ad Management
+                        </li>
                         <li class="flex items-center"><span class="text-bloom-gold mr-2">👑</span> 1 On-site Shoot</li>
                     </ul>
-                    <a href="#contact" class="block w-full text-center py-3 rounded-xl border-2 border-gray-100 font-bold hover:border-bloom-gold hover:text-bloom-gold transition">Select Tier 3</a>
+                    <a href="#contact"
+                        class="block w-full text-center py-3 rounded-xl border-2 border-gray-100 font-bold hover:border-bloom-gold hover:text-bloom-gold transition">Select
+                        Tier 3</a>
                 </div>
             </div>
-            
-            <p class="text-center text-xs text-gray-400 mt-8 italic">*Note: Ad spend budget is paid directly to the platform and is not included in the agency fee.</p>
+
+            <p class="text-center text-xs text-gray-400 mt-8 italic">*Note: Ad spend budget is paid directly to the
+                platform and is not included in the agency fee.</p>
         </div>
     </section>
 
     <section id="contact" class="py-24 bg-bloom-dark text-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gray-900/90 z-0"></div>
-        <div class="absolute top-0 right-0 w-96 h-96 bg-bloom-coral rounded-full mix-blend-screen filter blur-3xl opacity-10 animate-blob"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-bloom-teal rounded-full mix-blend-screen filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+        <div
+            class="absolute top-0 right-0 w-96 h-96 bg-bloom-coral rounded-full mix-blend-screen filter blur-3xl opacity-10 animate-blob">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-96 h-96 bg-bloom-teal rounded-full mix-blend-screen filter blur-3xl opacity-10 animate-blob animation-delay-2000">
+        </div>
 
         <div class="container mx-auto px-6 max-w-4xl relative z-10">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-bold mb-4">Ready to Bloom?</h2>
-                <p class="text-gray-400 text-lg">Let's discuss your current challenges and build a roadmap to revenue.</p>
+                <p class="text-gray-400 text-lg">Let's discuss your current challenges and build a roadmap to revenue.
+                </p>
             </div>
-            
+
             <form id="contactForm" class="glass-dark rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-700">
-                
+
                 <input type="hidden" name="access_key" value="410b9322-9df6-4363-b0ea-f7b4d48b3d7b">
 
                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
@@ -392,33 +866,45 @@
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label class="block text-sm font-bold mb-2 text-gray-300">Your Name</label>
-                        <input type="text" name="name" required class="w-full bg-gray-800/50 border border-gray-600 rounded-xl p-4 text-white placeholder-gray-500 focus:outline-none focus:border-bloom-coral focus:ring-1 focus:ring-bloom-coral transition" placeholder="John Doe">
+                        <input type="text" name="name" required
+                            class="w-full bg-gray-800/50 border border-gray-600 rounded-xl p-4 text-white placeholder-gray-500 focus:outline-none focus:border-bloom-coral focus:ring-1 focus:ring-bloom-coral transition"
+                            placeholder="John Doe">
                     </div>
                     <div>
                         <label class="block text-sm font-bold mb-2 text-gray-300">Business Name</label>
-                        <input type="text" name="business" required class="w-full bg-gray-800/50 border border-gray-600 rounded-xl p-4 text-white placeholder-gray-500 focus:outline-none focus:border-bloom-coral focus:ring-1 focus:ring-bloom-coral transition" placeholder="Brand Inc.">
+                        <input type="text" name="business" required
+                            class="w-full bg-gray-800/50 border border-gray-600 rounded-xl p-4 text-white placeholder-gray-500 focus:outline-none focus:border-bloom-coral focus:ring-1 focus:ring-bloom-coral transition"
+                            placeholder="Brand Inc.">
                     </div>
                 </div>
                 <div class="mb-6">
                     <label class="block text-sm font-bold mb-2 text-gray-300">Phone Number</label>
-                    <input type="tel" name="phone" required class="w-full bg-gray-800/50 border border-gray-600 rounded-xl p-4 text-white placeholder-gray-500 focus:outline-none focus:border-bloom-coral focus:ring-1 focus:ring-bloom-coral transition" placeholder="077xxxxxxx">
+                    <input type="tel" name="phone" required
+                        class="w-full bg-gray-800/50 border border-gray-600 rounded-xl p-4 text-white placeholder-gray-500 focus:outline-none focus:border-bloom-coral focus:ring-1 focus:ring-bloom-coral transition"
+                        placeholder="077xxxxxxx">
                 </div>
                 <div class="mb-8">
                     <label class="block text-sm font-bold mb-2 text-gray-300">Which Tier interests you?</label>
                     <div class="relative">
-                        <select name="tier" class="w-full bg-gray-800/50 border border-gray-600 rounded-xl p-4 text-white appearance-none focus:outline-none focus:border-bloom-coral focus:ring-1 focus:ring-bloom-coral transition">
+                        <select name="tier"
+                            class="w-full bg-gray-800/50 border border-gray-600 rounded-xl p-4 text-white appearance-none focus:outline-none focus:border-bloom-coral focus:ring-1 focus:ring-bloom-coral transition">
                             <option value="Tier 1: Essentials">Tier 1: The Essentials</option>
                             <option value="Tier 2: Growth Accelerator">Tier 2: The Growth Accelerator</option>
                             <option value="Tier 3: Brand Dominator">Tier 3: The Brand Dominator</option>
                             <option value="Not Sure">Not sure yet</option>
                         </select>
-                        <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-400">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <div
+                            class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
                         </div>
                     </div>
                 </div>
-                
-                <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-bloom-coral to-orange-600 text-white font-bold text-lg py-4 rounded-xl shadow-lg shadow-orange-900/50 hover:shadow-orange-700/50 hover:scale-[1.01] transition duration-200">
+
+                <button type="submit" id="submitBtn"
+                    class="w-full bg-gradient-to-r from-bloom-coral to-orange-600 text-white font-bold text-lg py-4 rounded-xl shadow-lg shadow-orange-900/50 hover:shadow-orange-700/50 hover:scale-[1.01] transition duration-200">
                     Submit Application
                 </button>
 
@@ -430,14 +916,19 @@
     <footer class="bg-gray-950 text-gray-500 py-12 border-t border-gray-800">
         <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
-                 <div class="w-8 h-8 rounded-full bg-bloom-coral flex items-center justify-center text-white font-bold">B</div>
-                 <span class="text-white font-bold text-lg">Bloom Labs</span>
+                <div class="w-8 h-8 rounded-full bg-bloom-coral flex items-center justify-center text-white font-bold">B
+                </div>
+                <span class="text-white font-bold text-lg">Bloom Labs</span>
             </div>
             <div class="flex items-center gap-6">
-                <a href="https://www.facebook.com/share/1CRBUmYXLN/?mibextid=wwXIfr" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f fa-lg"></i></a>
-                <a href="https://www.linkedin.com/company/110502966/admin/dashboard/" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in fa-lg"></i></a>
-                <a href="https://www.tiktok.com/@bloomlabsofficial3?_r=1&_t=ZS-92A83mNd1Ci" class="text-gray-400 hover:text-white transition"><i class="fab fa-tiktok fa-lg"></i></a>
-                <a href="https://www.instagram.com/bloomlabs02" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://www.facebook.com/share/1CRBUmYXLN/?mibextid=wwXIfr"
+                    class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="https://www.linkedin.com/company/110502966/admin/dashboard/"
+                    class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                <a href="https://www.tiktok.com/@bloomlabsofficial3?_r=1&_t=ZS-92A83mNd1Ci"
+                    class="text-gray-400 hover:text-white transition"><i class="fab fa-tiktok fa-lg"></i></a>
+                <a href="https://www.instagram.com/bloomlabs02" class="text-gray-400 hover:text-white transition"><i
+                        class="fab fa-instagram fa-lg"></i></a>
             </div>
             <div class="text-sm">
                 &copy; 2025 Bloom Labs Agency. All rights reserved.
@@ -474,14 +965,14 @@
         // 3. Tab Switching Logic
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
-            
+
             // Hide contents
             tabcontent = document.getElementsByClassName("tab-content");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].classList.add("hidden");
                 tabcontent[i].classList.remove("block");
             }
-            
+
             // Deactivate buttons
             tablinks = document.getElementsByClassName("tab-btn");
             for (i = 0; i < tablinks.length; i++) {
@@ -490,12 +981,12 @@
                 tablinks[i].classList.remove("bg-white", "shadow-md");
                 tablinks[i].classList.add("hover:bg-gray-50");
             }
-            
+
             // Show Target
             const target = document.getElementById(tabName);
             target.classList.remove("hidden");
             target.classList.add("block");
-            
+
             // Activate Button
             evt.currentTarget.classList.add("active");
             evt.currentTarget.classList.remove("hover:bg-gray-50");
@@ -505,9 +996,9 @@
         const result = document.getElementById('formResult');
         const submitBtn = document.getElementById('submitBtn');
 
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault(); // Prevents the page from reloading
-            
+
             // 1. Change button text to indicate loading
             const originalBtnText = submitBtn.innerHTML;
             submitBtn.innerHTML = "Sending...";
@@ -527,42 +1018,79 @@
                 },
                 body: json
             })
-            .then(async (response) => {
-                let json = await response.json();
-                if (response.status == 200) {
-                    // 3. Success State
-                    result.classList.remove('hidden', 'text-red-400');
-                    result.classList.add('text-green-400');
-                    result.innerHTML = "🎉 Application Received! We will contact you shortly.";
-                    form.reset(); // Clear the form
-                } else {
-                    // 4. Error State
-                    console.log(response);
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        // 3. Success State
+                        result.classList.remove('hidden', 'text-red-400');
+                        result.classList.add('text-green-400');
+                        result.innerHTML = "🎉 Application Received! We will contact you shortly.";
+                        form.reset(); // Clear the form
+                    } else {
+                        // 4. Error State
+                        console.log(response);
+                        result.classList.remove('hidden', 'text-green-400');
+                        result.classList.add('text-red-400');
+                        result.innerHTML = json.message || "Something went wrong. Please try again.";
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
                     result.classList.remove('hidden', 'text-green-400');
                     result.classList.add('text-red-400');
-                    result.innerHTML = json.message || "Something went wrong. Please try again.";
-                }
-            })
-            .catch(error => {
-                console.log(error);
-                result.classList.remove('hidden', 'text-green-400');
-                result.classList.add('text-red-400');
-                result.innerHTML = "Something went wrong!";
-            })
-            .then(function() {
-                // 5. Reset Button
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-                submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    result.classList.add('hidden');
-                }, 5000);
-            });
+                    result.innerHTML = "Something went wrong!";
+                })
+                .then(function () {
+                    // 5. Reset Button
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+
+                    // Hide message after 5 seconds
+                    setTimeout(() => {
+                        result.classList.add('hidden');
+                    }, 5000);
+                });
         });
-        
-         
+
+        // 4. Portfolio Filter Logic
+        function filterPortfolio(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            const filters = document.querySelectorAll('.portfolio-filter');
+
+            // Update filter button states
+            filters.forEach(filter => {
+                filter.classList.remove('bg-slate-900', 'text-white', 'shadow-lg', 'active');
+                filter.classList.add('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+            });
+
+            // Activate clicked filter
+            const activeFilter = document.querySelector(`[data-filter="${category}"]`);
+            activeFilter.classList.remove('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+            activeFilter.classList.add('bg-slate-900', 'text-white', 'shadow-lg', 'active');
+
+            // Filter items with animation
+            items.forEach(item => {
+                const itemCategories = item.getAttribute('data-category');
+                if (category === 'all' || itemCategories.includes(category)) {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
     </script>
 </body>
+
 </html>
