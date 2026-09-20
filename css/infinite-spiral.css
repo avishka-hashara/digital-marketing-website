@@ -1,0 +1,147 @@
+/* infinite-spiral.css
+   InfiniteSpiral component – light hero background variant
+   --------------------------------------------------------- */
+
+/* ── Container ── */
+.hero-spiral {
+  position: relative;
+  width: 100%;
+  height: min(640px, calc(100vh - 140px));
+  min-height: 480px;
+  overflow: hidden;
+  background: transparent;
+  touch-action: pan-y;
+}
+
+/* Perspective wrapper – perspective set via JS */
+.is-scene {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  perspective-origin: 50% 50%;
+}
+
+/* ── Individual card ── */
+.is-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 14px 38px rgba(15, 23, 42, 0.12);
+  will-change: transform, opacity, filter;
+  transform-origin: center center;
+  transition: box-shadow 0.2s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 12px 14px;
+  color: inherit;
+  transform: translate(-50%, -50%) translateZ(0);
+  /* Cards are interactive */
+  pointer-events: auto;
+}
+
+.is-card:hover {
+  box-shadow: 0 18px 52px rgba(15, 23, 42, 0.18);
+}
+
+/* Card inner content */
+.is-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.is-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.is-card__label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  color: #1a202c;
+  letter-spacing: 0.01em;
+  /* Fit inside the card at any size */
+  padding: 0 8px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  max-width: 100%;
+  pointer-events: none;
+}
+
+/* ── Hero layout column ── */
+/* The wrapper div that holds the spiral */
+.hero-spiral-col {
+  /* Let spiral bleed slightly left toward text */
+  margin-left: -60px;
+  /* Stay visually behind text on z */
+  z-index: 0;
+  position: relative;
+  min-width: 0;
+  /* Overflow part of the column (the bleed) is passthrough;
+     individual .is-card elements keep pointer-events: auto */
+  pointer-events: none;
+}
+
+/* Cards themselves must remain clickable */
+.hero-spiral-col .is-card {
+  pointer-events: auto;
+}
+
+/* ── Hero grid: collapse to single column on tablet ── */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-spiral-col {
+    margin-left: 0;
+  }
+}
+
+/* ── Responsive ── */
+
+/* Tablet: single column, no bleed */
+@media (max-width: 1024px) {
+  .hero-spiral {
+    height: 420px;
+    min-height: 320px;
+  }
+  .hero-spiral-col {
+    margin-left: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .hero-spiral {
+    height: 360px;
+    min-height: 280px;
+  }
+  .hero-spiral-col {
+    margin-left: 0;
+  }
+}
+
+/* ── Reduced-motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .is-card {
+    transition: none;
+    will-change: auto;
+  }
+}

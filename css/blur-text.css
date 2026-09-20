@@ -1,0 +1,65 @@
+/* blur-text.css
+   BlurText word-reveal animation – services hero H1
+   -------------------------------------------------- */
+
+/*
+  Hide words before animation fires.
+  Scoped to .js so the text stays visible when JS fails.
+  The .js class is added to <html> by an inline script in <head>.
+*/
+.js .blur-text__word {
+  opacity: 0;
+}
+
+/* Reduce motion: show everything immediately, no animation */
+@media (prefers-reduced-motion: reduce) {
+  .js .blur-text__word {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+  /* Also reveal underline immediately */
+  .blur-text__underline-svg {
+    transform: scaleX(1) !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ── Per-word wrapper ── */
+.blur-text__word {
+  display: inline-block;
+  will-change: transform, filter, opacity;
+  /* Whitespace is handled by injected text nodes, not flex */
+}
+
+/*
+  ── Animated underline on the coral span ──
+  Replace the inline SVG underline with a CSS ::after pseudo-element
+  so we can animate scaleX independently.
+  The inline SVG is removed by initBlurText and this ::after takes its place.
+*/
+.blur-text__coral-span {
+  position: relative;
+  display: inline-block; /* same as the original inline-block */
+}
+
+.blur-text__coral-span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;          /* same visual position as the SVG (-bottom-2 ≈ -8px) */
+  width: 100%;
+  height: 3px;           /* same visual weight as the SVG stroke */
+  background: currentColor;  /* inherits the coral color from the span */
+  opacity: 0.2;          /* matches text-bloom-coral/20 from the original SVG */
+  border-radius: 2px;
+  /* Start invisible, animate in after last word */
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: none; /* driven by JS, not CSS transition */
+}
+
+/* When JS reveals it */
+.blur-text__coral-span.underline-revealed::after {
+  /* The scaleX animation is applied via element.animate() in JS */
+}
