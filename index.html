@@ -151,7 +151,7 @@
                 </a>
 
                 <div class="hidden md:flex space-x-8 text-sm font-semibold text-gray-600 items-center">
-                    <a href="#services"
+                    <a href="services.html"
                         class="hover:text-bloom-coral transition relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-bloom-coral after:transition-all hover:after:w-full">Services</a>
                     <a href="#portfolio"
                         class="hover:text-bloom-coral transition relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-bloom-coral after:transition-all hover:after:w-full">Portfolio</a>
@@ -176,7 +176,7 @@
             </div>
 
             <div id="mobile-menu" class="md:hidden mt-4 flex flex-col space-y-4 pb-4 border-t border-gray-100 pt-4">
-                <a href="#services" class="text-gray-600 font-medium hover:text-bloom-coral pl-2 block"
+                <a href="services.html" class="text-gray-600 font-medium hover:text-bloom-coral pl-2 block"
                     onclick="toggleMenu()">Services</a>
                 <a href="#portfolio" class="text-gray-600 font-medium hover:text-bloom-coral pl-2 block"
                     onclick="toggleMenu()">Portfolio</a>
@@ -240,131 +240,41 @@
         </div>
     </header>
 
-    <section id="services" class="py-20 md:py-24 bg-white relative">
-        <div class="container mx-auto px-6 reveal">
-            <div class="text-center mb-16">
-                <p class="text-bloom-teal font-bold uppercase text-sm mb-2 tracking-wider">OUR EXPERTISE</p>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Everything You Need To Grow</h2>
+    <section id="services-summary" class="py-20 md:py-24 bg-white relative text-center">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="reveal">
+                <p class="text-bloom-teal font-bold uppercase text-sm mb-4 tracking-widest">What We Do</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Practical tech & AI for growing businesses</h2>
+                <p class="text-lg text-slate-600 mb-10 leading-relaxed">
+                    We provide a comprehensive suite of services ranging from digital presence and commerce to advanced AI solutions, business systems, and cybersecurity. Built specifically for Sri Lankan businesses.
+                </p>
+                <a href="services.html" class="inline-flex items-center justify-center bg-slate-900 text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition transform shadow-lg">
+                    Explore Our Full Service Portfolio
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
             </div>
-
-            <div class="flex flex-col lg:flex-row gap-8">
-                <div class="lg:w-1/3 flex flex-col space-y-3">
-                    <button onclick="openTab(event, 'social')"
-                        class="tab-btn active w-full text-left p-4 rounded-xl flex items-center gap-4 group hover:bg-gray-50">
-                        <div
-                            class="icon-box w-12 h-12 rounded-lg flex items-center justify-center text-2xl bg-gray-100 text-gray-500">
-                            📱</div>
-                        <div>
-                            <span class="font-bold text-lg block text-slate-800">Social Management</span>
-                            <span class="text-xs md:text-sm text-slate-400">Full Profile Ownership</span>
-                        </div>
-                    </button>
-                    <button onclick="openTab(event, 'content')"
-                        class="tab-btn w-full text-left p-4 rounded-xl flex items-center gap-4 group hover:bg-gray-50">
-                        <div
-                            class="icon-box w-12 h-12 rounded-lg flex items-center justify-center text-2xl bg-gray-100 text-gray-500">
-                            🎨</div>
-                        <div>
-                            <span class="font-bold text-lg block text-slate-800">Content Production</span>
-                            <span class="text-xs md:text-sm text-slate-400">Design & Short-Form Video</span>
-                        </div>
-                    </button>
-                    <button onclick="openTab(event, 'ads')"
-                        class="tab-btn w-full text-left p-4 rounded-xl flex items-center gap-4 group hover:bg-gray-50">
-                        <div
-                            class="icon-box w-12 h-12 rounded-lg flex items-center justify-center text-2xl bg-gray-100 text-gray-500">
-                            🎯</div>
-                        <div>
-                            <span class="font-bold text-lg block text-slate-800">Paid Advertising</span>
-                            <span class="text-xs md:text-sm text-slate-400">Meta Ads & Targeting</span>
-                        </div>
-                    </button>
-                </div>
-
-                <div
-                    class="lg:w-2/3 bg-bloom-light/50 rounded-3xl p-6 md:p-12 shadow-xl border border-white/50 min-h-[450px] relative overflow-hidden">
-
-                    <div class="absolute -top-20 -right-20 w-64 h-64 bg-bloom-teal/10 rounded-full blur-3xl"></div>
-
-                    <div id="social" class="tab-content block animate-fade-in relative z-10">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-6 text-slate-900">We Handle The Daily Grind.</h3>
-                        <p class="text-lg text-slate-600 mb-8">Stop worrying about what to post tomorrow. We take over
-                            your Instagram, Facebook, and TikTok.</p>
-                        <div class="grid md:grid-cols-2 gap-4 md:gap-6">
-                            <div
-                                class="p-5 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                                <h4 class="font-bold text-bloom-coral mb-2">🗓️ Content Calendar</h4>
-                                <p class="text-sm text-gray-600">Planning posts 30 days in advance so you always know
-                                    what's coming.</p>
-                            </div>
-                            <div
-                                class="p-5 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                                <h4 class="font-bold text-bloom-teal mb-2">✍️ Copywriting</h4>
-                                <p class="text-sm text-gray-600">Engaging captions in English (or Sinhala) that actually
-                                    drive action.</p>
-                            </div>
-                            <div
-                                class="p-5 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition col-span-1 md:col-span-2">
-                                <h4 class="font-bold text-bloom-gold mb-2">⏰ Strategic Scheduling</h4>
-                                <p class="text-sm text-gray-600">Posting at peak times using data to maximize your
-                                    organic reach.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="content" class="tab-content hidden animate-fade-in relative z-10">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-6 text-slate-900">Original Content. No Generics.
-                        </h3>
-                        <p class="text-lg text-slate-600 mb-8">Generic stock photos don't sell. We create original,
-                            branded assets that stop the scroll.</p>
-                        <ul class="space-y-4">
-                            <li class="bg-white p-4 rounded-xl border border-gray-100 flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 rounded-full bg-bloom-coral/10 text-bloom-coral flex items-center justify-center font-bold">
-                                    1</div>
-                                <div>
-                                    <strong class="block text-gray-900 text-lg">Graphic Design</strong>
-                                    <span class="text-gray-500 text-sm">Branded posts for offers, announcements, and
-                                        educational carousels.</span>
-                                </div>
-                            </li>
-                            <li class="bg-white p-4 rounded-xl border border-gray-100 flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 rounded-full bg-bloom-teal/10 text-bloom-teal flex items-center justify-center font-bold">
-                                    2</div>
-                                <div>
-                                    <strong class="block text-gray-900 text-lg">Short-Form Video</strong>
-                                    <span class="text-gray-500 text-sm">Editing dynamic Reels/TikToks. Currently the
-                                        highest reach format.</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div id="ads" class="tab-content hidden animate-fade-in relative z-10">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-6 text-slate-900">Reach Beyond Your Followers.</h3>
-                        <p class="text-lg text-slate-600 mb-8">Organic reach is great, but paid ads are scalable. We
-                            ensure every Rupee spent brings a return.</p>
-                        <div class="space-y-6">
-                            <div class="bg-white p-6 rounded-xl border-l-4 border-bloom-coral shadow-sm">
-                                <h4 class="font-bold text-lg text-slate-800">🎯 Hyper-Targeting</h4>
-                                <p class="text-gray-600 mt-2">"People in Kandy aged 18-30 interested in Fashion". We
-                                    find your exact customer.</p>
-                            </div>
-                            <div class="bg-white p-6 rounded-xl border-l-4 border-bloom-gold shadow-sm">
-                                <h4 class="font-bold text-lg text-slate-800">💰 Budget Optimization</h4>
-                                <p class="text-gray-600 mt-2">We monitor campaigns daily to kill losing ads and scale
-                                    winning ones.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+            
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 text-left reveal delay-100">
+                <a href="services.html#digital-presence-commerce" class="p-4 border border-slate-100 rounded-xl hover:shadow-md transition hover:border-bloom-teal group bg-white">
+                    <h3 class="font-bold text-slate-800 text-sm mb-1 group-hover:text-bloom-teal transition">Digital Presence</h3>
+                    <p class="text-xs text-slate-500">Websites & E-commerce</p>
+                </a>
+                <a href="services.html#business-systems-automation" class="p-4 border border-slate-100 rounded-xl hover:shadow-md transition hover:border-bloom-teal group bg-white">
+                    <h3 class="font-bold text-slate-800 text-sm mb-1 group-hover:text-bloom-teal transition">Business Systems</h3>
+                    <p class="text-xs text-slate-500">ERP, Apps & Automation</p>
+                </a>
+                <a href="services.html#ai-solutions-agents" class="p-4 border border-slate-100 rounded-xl hover:shadow-md transition hover:border-bloom-teal group bg-white">
+                    <h3 class="font-bold text-slate-800 text-sm mb-1 group-hover:text-bloom-teal transition">AI Solutions</h3>
+                    <p class="text-xs text-slate-500">Agents & AI Chatbots</p>
+                </a>
+                <a href="services.html" class="p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition flex flex-col items-center justify-center text-center group">
+                    <span class="font-bold text-bloom-coral text-sm group-hover:scale-105 transition">+ 4 More Pillars</span>
+                    <span class="text-xs text-slate-500 mt-1">See full list &rarr;</span>
+                </a>
             </div>
         </div>
     </section>
-
-    <!-- Portfolio Section -->
+    
     <section id="portfolio" class="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
         <!-- Background Elements -->
         <div class="absolute top-20 right-10 w-72 h-72 bg-bloom-coral/5 rounded-full blur-3xl"></div>

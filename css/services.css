@@ -1,0 +1,149 @@
+/* services.css */
+
+:root {
+  --bloom-coral: #FF7F6D;
+  --bloom-teal: #65C3BA;
+  --bloom-gold: #E5BF58;
+  --bloom-dark: #1A202C;
+  --bloom-light: #F8FAFC;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+}
+
+/* Accordion Specific Styles */
+details {
+  border: 1px solid #e2e8f0; /* slate-200 */
+  border-radius: var(--radius-xl);
+  background-color: #ffffff;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+details:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+details[open] {
+  background-color: #f8fafc; /* slate-50 */
+  border-left: 4px solid var(--bloom-teal);
+}
+
+summary {
+  list-style: none; /* Hide default arrow */
+  cursor: pointer;
+  outline: none;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:focus-visible {
+  outline: 2px solid var(--bloom-coral);
+  outline-offset: -2px;
+}
+
+/* Chevron Rotation */
+.chevron {
+  transition: transform 0.25s ease;
+}
+details[open] .chevron {
+  transform: rotate(180deg);
+}
+
+/* Smooth expansion animation (polyfill via CSS) */
+.details-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease, opacity 0.25s ease;
+  opacity: 0;
+}
+
+details[open] .details-content {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.details-content-inner {
+  overflow: hidden;
+  padding: 0 1.5rem;
+  /* Bottom padding added when open */
+}
+
+details[open] .details-content-inner {
+  padding-bottom: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  details, details[open], .details-content, .chevron {
+    transition: none;
+  }
+}
+
+/* Sticky sidebar / Group Nav */
+.group-nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: #64748b; /* slate-500 */
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.group-nav-link:hover {
+  color: #0f172a; /* slate-900 */
+  background-color: #f1f5f9; /* slate-100 */
+}
+
+.group-nav-link.active {
+  color: var(--bloom-teal);
+  background-color: rgba(101, 195, 186, 0.1);
+  font-weight: 600;
+}
+
+/* Mobile horizontal chips for groups */
+.mobile-chips {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.mobile-chips::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for chips Chrome, Safari */
+}
+
+.mobile-chip {
+  flex-shrink: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  font-weight: 500;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.mobile-chip:hover {
+  background-color: #f1f5f9;
+}
+
+.mobile-chip.active {
+  background-color: var(--bloom-teal);
+  color: #ffffff;
+  border-color: var(--bloom-teal);
+}
+
+/* Search input focus */
+#service-search:focus {
+  outline: 2px solid var(--bloom-teal);
+  outline-offset: -1px;
+}
