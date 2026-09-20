@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
@@ -16,8 +16,10 @@ import {
 } from 'lucide-react';
 import BlurText from '../components/reactbits/BlurText';
 
-import StrokeText from '../components/reactbits/StrokeText';
+import FoldText from '../components/reactbits/FoldText';
 import SpecularButton from '../components/reactbits/SpecularButton';
+
+const LightPillar = lazy(() => import('../components/LightPillar'));
 
 const portfolioData = [
   {
@@ -126,21 +128,37 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <header className="relative pt-32 pb-24 md:pb-36 overflow-hidden bg-slate-50 border-b border-slate-200">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-          <div className="absolute top-0 -left-4 w-80 h-80 bg-bloom-coral rounded-full mix-blend-multiply filter blur-3xl opacity-15"></div>
-          <div className="absolute top-0 -right-4 w-80 h-80 bg-bloom-teal rounded-full mix-blend-multiply filter blur-3xl opacity-15"></div>
-          <div className="absolute -bottom-8 left-1/3 w-96 h-96 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+      <header className="relative pt-32 pb-24 md:pb-36 overflow-hidden isolate bg-slate-50 border-b border-slate-200">
+        {/* LightPillar WebGL Background */}
+        <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
+          <Suspense fallback={null}>
+            <LightPillar
+              topColor="#FF5E3A"
+              bottomColor="#F4A261"
+              lightMode
+              intensity={0.9}
+              rotationSpeed={0.3}
+              glowAmount={0.005}
+              pillarWidth={3.0}
+              pillarHeight={0.4}
+              noiseIntensity={0.3}
+              pillarRotation={0}
+              interactive={false}
+              mixBlendMode="normal"
+              quality="high"
+              className="opacity-60"
+            />
+          </Suspense>
+          {/* Soft radial veil to ensure perfect text contrast & readability */}
           <div 
-            className="absolute inset-0 opacity-25" 
-            style={{ 
-              backgroundImage: 'radial-gradient(#94a3b8 1px, transparent 1px)', 
-              backgroundSize: '28px 28px' 
+            className="absolute inset-0 z-[1] pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse 70% 60% at 50% 45%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.4) 70%, rgba(255, 255, 255, 0) 100%)'
             }}
-          ></div>
+          />
         </div>
 
-        <div className="container mx-auto px-6 text-center z-10 relative max-w-5xl">
+        <div className="container mx-auto px-6 text-center relative z-10 max-w-5xl">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-orange-100 shadow-sm mb-8">
             <span className="w-2.5 h-2.5 rounded-full bg-bloom-coral animate-pulse"></span>
             <span className="text-xs font-bold text-bloom-coral tracking-widest uppercase">
@@ -149,36 +167,34 @@ const HomePage = () => {
           </div>
 
           <h1 className="w-full max-w-4xl mx-auto mb-6 flex flex-col items-center justify-center gap-1 sm:gap-2">
-            <StrokeText
+            <FoldText
               text="Smart technology and AI for"
-              strokeColor="#0F172A"
-              fillColor="#0F172A"
-              strokeWidth={2}
-              drawDuration={1.2}
-              fillDelay={0.15}
-              stagger={0.03}
-              ease="power2.out"
+              splitBy="char"
+              hinge="top"
               trigger="mount"
-              fillMode="wipe"
-              fontSize={56}
+              duration={0.65}
+              stagger={0.035}
+              ease="power3.out"
+              perspective={700}
+              creaseShading={0.45}
+              fontSize="clamp(2rem, 5.2vw, 3.65rem)"
               fontWeight={800}
-              letterSpacing={-1.5}
+              color="#0F172A"
               className="w-full max-w-3xl"
             />
-            <StrokeText
+            <FoldText
               text="Sri Lankan businesses"
-              strokeColor="#FF5E3A"
-              fillColor="#FF5E3A"
-              strokeWidth={2.2}
-              drawDuration={1.3}
-              fillDelay={0.25}
-              stagger={0.035}
-              ease="power2.out"
+              splitBy="char"
+              hinge="top"
               trigger="mount"
-              fillMode="wipe"
-              fontSize={62}
+              duration={0.65}
+              stagger={0.04}
+              ease="power3.out"
+              perspective={700}
+              creaseShading={0.45}
+              fontSize="clamp(2.25rem, 5.8vw, 4.15rem)"
               fontWeight={800}
-              letterSpacing={-1.5}
+              color="#FF5E3A"
               className="w-full max-w-3xl"
             />
           </h1>
